@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F9FAFB] text-[#222222] min-h-screen font-body relative;
+  }
+}
+
+/* Custom visual styles and animations */
+.glass-panel {
+  @apply bg-white border border-dev-border shadow-dev rounded-xl;
+}
+
+.glass-card {
+  @apply bg-white border border-dev-border rounded-lg p-5 transition-all duration-200;
+}
+
+.glass-card:hover {
+  @apply shadow-dev border-slate-300;
+}
+
+/* Circular gauge animations */
+.gauge-fill {
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slide down transitions */
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
